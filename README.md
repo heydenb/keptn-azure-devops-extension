@@ -1,8 +1,6 @@
-# Azure DevOps Cloud Automation Integration powered by Keptn
+# Azure DevOps Keptn Integration
 
-## :warning: This service is currently not maintained - please reach out to the Keptn community via https://slack.keptn.sh if you want to take ownership of this repository and update it to make it work with the latest version of Keptn :warning:
-
-Integration of Cloud Automation powered by [Keptn][keptn_link] within your Azure DevOps pipelines. 
+Integration of [Keptn][keptn_link] within your Azure DevOps pipelines. 
 
 This extension includes 4 tasks which can be used to integrate your pipeline with Cloud Automation [Keptn][keptn_link] capabilities.
 - Prepare [Keptn][keptn_link] environment
@@ -16,9 +14,9 @@ Watch the following Keptn Community Webinar to see the extension in action:
 
 ## Compatibility matrix
 
-You can find out the latest release on the [VisualStudio Marketplace](https://marketplace.visualstudio.com/items?itemName=dynatrace.cloud-automation-integration).
+You can find out the latest release on the [VisualStudio Marketplace](https://marketplace.visualstudio.com/items?itemName=RealdolmenDevOps.keptn-integration).
 
-This integration aims to be compatible with Keptn 0.9.x and 0.10.0. For more information, please take a look at [CHANGELOG.md](CHANGELOG.md).
+This integration aims to be compatible with Keptn 0.9.x towards 0.19.x and higher For more information, please take a look at [CHANGELOG.md](CHANGELOG.md).
 
 ## The service endpoint
 First of all you need to configure the [Keptn][keptn_link] endpoint as a [`service connection`](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml).
@@ -30,21 +28,12 @@ All you need to configure is the API endpoint and the token. Note that the api e
 
 ## Prepare Keptn environment
 
-:warning: **This task is deprecated and will stop working once Keptn requires a git upstream repo when creating a project.**  It is recommended to use the Keptn CLI/API for project setup.
+Creation of a Keptn project with compatible shipyard is not a part of this extension anymore. It is recommended to use the Keptn CLI/API/UI for project setup.
 
-This task is optional, but very usefull since it prepares a project, stage and service for you. It also puts these entities as variables on the pipeline for later use by the other tasks. Optionally you can also configure monitoring here and push an [sli and slo](https://keptn.sh/docs/concepts/quality_gates/) file to Keptn.
+This task is optional, but very usefull since it prepares a service inside the project. It also puts these entities as variables on the pipeline for later use by the other tasks. Optionally you can also configure monitoring here and push an [sli and slo](https://keptn.sh/docs/concepts/quality_gates/) file to Keptn.
 ![Prepare Keptn environment config](screenshots/task-prepkeptnenv.png)
 
-When you flag the Create/Initalize flag, you will see following in the keptn bridge if the project did not yet exist.
-![Prepare Keptn environment result](screenshots/task-prepkeptnenv-result.png)
-
-It's not in the screenshot, but there is also a section where you could configure monitoring via [Dynatrace][dynatrace_link] or [Prometheus][prometheus_link] and upload an sli and slo file. See https://keptn.sh/docs/0.8.x/quality_gates/ for more details on Service Level Indicators and Service Level Objectives.
-
-This task also has options for the shipyard file required by the project. There are 3 types:
-- `generated`: Which generates a simple shipyard which is enough for the quality-gate only use-case. You can always adapt this shipyard later on via the [Keptn][keptn_link] CLI.
-- `inline`: A multiline textarea will appear allowing you to describe the yaml structure. Note that you could use placeholders for stage and whatever variables you want. This is default Azure Devops functionality.
-- `file`: You then provide the path to the shipyard file which is available for the pipeline.
-> **Note:** that the shipyard is only used once when creating the project. Any updates later on can be done via the [Keptn][keptn_link] CLI or any other means that [Keptn][keptn_link] provides.
+It's not in the screenshot, but there is also a section where you could configure monitoring via [Dynatrace][dynatrace_link] or [Prometheus][prometheus_link] and upload an sli and slo file. See https://keptn.sh/docs/concepts/quality_gates/ for more details on Service Level Indicators and Service Level Objectives.
 
 ## Send Keptn event
 The main task in this extension.
@@ -119,7 +108,7 @@ Development Docs are available in [README_DEV](README_DEV.md).
 
 Initially created by `Bert Van der Heyden, Inetum-RealDolmen`.
 
-Also available via the Visual Studio MarketPlace: https://marketplace.visualstudio.com/items?itemName=dynatrace.cloud-automation-integration
+Also available via the Visual Studio MarketPlace: https://marketplace.visualstudio.com/items?itemName=RealdolmenDevOps.keptn-integration
 
 [keptn_link]: https://keptn.sh
 [dynatrace_link]: https://dynatrace.com
