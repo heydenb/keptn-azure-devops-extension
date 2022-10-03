@@ -1,9 +1,9 @@
 {
-  "id": "8620874a-91c1-4300-b655-4b3c757e862c",
+  "id": "f423c3f9-bd6d-11ea-b3de-0242ac130004",
   "name": "AddKeptnResourceTask",
   "friendlyName": "Add Keptn Resource",
   "description": "Add a resource to the Keptn environment",
-  "author": "Dynatrace",
+  "author": "Inetum-Realdolmen (Bert Van der Heyden)",
   "helpMarkDown": "Add a resource to the Keptn environment",
   "category": "Test",
   "visibility": [
