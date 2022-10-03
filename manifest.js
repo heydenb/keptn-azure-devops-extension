@@ -48,15 +48,20 @@ module.exports = (env) => {
   }
 
   let version = env.version;
+  let publisher = "RealdolmenDevOps";
+  if (env.mode == "development" && env.publisher) {
+    publisher = env.publisher;
+  }
+  
 
   let manifest = {
     manifestVersion: 1,
-    id: `cloud-automation-integration${idPostfix}`,
+    id: `keptn-integration${idPostfix}`,
     version: version,
-    name: `Cloud Automation Integration ${namePostfix}`,
+    name: `Keptn Integration ${namePostfix}`,
     description:
-      "Integration of Cloud Automation powered by Keptn within your build or release pipeline.",
-    publisher: "dynatrace",
+      "Integration of Keptn within your build or release pipeline.",
+    publisher: publisher,
     public: isPublic,
     targets: [
       {
@@ -84,7 +89,7 @@ module.exports = (env) => {
         type: "ms.vss-endpoint.service-endpoint-type",
         targets: ["ms.vss-endpoint.endpoint-types"],
         properties: {
-          name: "Keptn-Api-Endpoint",
+          name: "Keptn",
           displayName: "Keptn",
           url: {
             displayName: "Keptn API Url",
@@ -135,13 +140,13 @@ module.exports = (env) => {
   addTaskToContribution(
     manifest.contributions,
     "prep-keptn-env",
-    "SetupKeptnProjectTask",
-    "Setup Keptn project environment"
+    "PrepareKeptnEnvTask",
+    "Prepare Keptn environment"
   );
   addPathToFileContributions(
     manifest.files,
     "dist",
-    "SetupKeptnProjectTask/SetupKeptnProjectTaskV2"
+    "PrepareKeptnEnvTask/PrepareKeptnEnvTaskV3"
   );
 
   addTaskToContribution(

@@ -9,6 +9,7 @@
   },
   "include": [
     "./SetupKeptnProjectTask/**/*",
+    "./PrepareKeptnEnvTask/**/*",
     "./SendKeptnEventTask/**/*",
     "./WaitForKeptnEventTask/**/*",
     "./AddKeptnResourceTask/**/*"

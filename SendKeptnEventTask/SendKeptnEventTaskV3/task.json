@@ -1,9 +1,9 @@
 {
-  "id": "ba752567-3f3e-436c-a7b5-bb067d17b3d3",
+  "id": "f423bd7c-bd6d-11ea-b3de-0242ac130004",
   "name": "SendKeptnEventTask",
   "friendlyName": "Send cloud-event to Keptn",
   "description": "Send cloud-event to Keptn",
-  "author": "Dynatrace",
+  "author": "Inetum-Realdolmen (Bert Van der Heyden)",
   "helpMarkDown": "Send cloud-event to Keptn. Use startEvaluation to trigger Keptn to perform the SLI/SLO based validation.",
   "category": "Test",
   "visibility": [
@@ -13,8 +13,8 @@
   "demands": [],
   "version": {
     "Major": 3,
-    "Minor": 0,
-    "Patch": 3
+    "Minor": 1,
+    "Patch": 0
   },
   "groups": [
     {
@@ -31,7 +31,7 @@
   "inputs": [
   	{
       "name": "keptnApiEndpoint",
-      "type": "connectedService:Keptn-Api-Endpoint",
+      "type": "connectedService:Keptn",
       "label": "Keptn API Endpoint",
       "defaultValue": "",
       "required": true,

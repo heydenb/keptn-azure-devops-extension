@@ -5,7 +5,7 @@
   "scripts": {
     "clean": "rimraf ./*.vsix ./dist",
     "build": "tsc -p .",
-    "test-prep": "mocha SetupKeptnProjectTask/SetupKeptnProjectTaskV2/tests/_suite.js",
+    "test-prep": "mocha PrepareKeptnEnvTask/PrepareKeptnEnvTaskV3/tests/_suite.js",
     "test-send": "mocha SendKeptnEventTask/SendKeptnEventTaskV3/tests/_suite.js",
     "test-wait": "mocha WaitForKeptnEventTask/WaitForKeptnEventTaskV2/tests/_suite.js",
     "test-addr": "mocha AddKeptnResourceTask/AddKeptnResourceTaskV1/tests/_suite.js",
@@ -14,7 +14,7 @@
     "task:bump": "azp-bump",
     "tasks:bump": "npm run task:bump -- *Task/**/task.json",
     "package-prod-deps": "rimraf ./dist/node_modules/ ./dist/package.json && mkdir -p ./dist && cp ./package.json  ./dist/ && npm install --production --prefix ./dist",
-    "package-dev": "npm run build && npm run package-prod-deps && tfx extension create --manifest-js manifest.js --env mode=development,version=${AZDO_EXT_VERSION}",
+    "package-dev": "npm run build && npm run package-prod-deps && tfx extension create --manifest-js manifest.js --env mode=development,version=${AZDO_EXT_VERSION},publisher=${PUBLISHER}",
     "package": "npm run build && npm run package-prod-deps && tfx extension create --manifest-js manifest.js --env version=${AZDO_EXT_VERSION}",
     "publish-dev": "npm run build && npm run package-prod-deps && tfx extension publish -t ${AZDO_PUBTOKEN} --manifest-js manifest.js --env mode=development,version=${AZDO_EXT_VERSION}",
     "publish": "npm run build && npm run package-prod-deps && tfx extension publish -t ${AZDO_PUBTOKEN} --manifest-js manifest.js --env version=${AZDO_EXT_VERSION}"

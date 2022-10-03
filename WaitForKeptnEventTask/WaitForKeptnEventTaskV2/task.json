@@ -1,9 +1,9 @@
 {
-  "id": "1f5c81dc-4a43-493b-bcb2-48ce25ddade9",
+  "id": "f423c2b8-bd6d-11ea-b3de-0242ac130004",
   "name": "WaitForKeptnEventTask",
   "friendlyName": "Wait for Keptn Event",
   "description": "Wait for an answer of a Keptn event",
-  "author": "Dynatrace",
+  "author": "Inetum-Realdolmen (Bert Van der Heyden)",
   "helpMarkDown": "Wait for an answer of a Keptn event",
   "category": "Test",
   "visibility": [
@@ -13,8 +13,8 @@
   "demands": [],
   "version": {
     "Major": 2,
-    "Minor": 0,
-    "Patch": 1
+    "Minor": 1,
+    "Patch": 0
   },
   "groups": [
     {
@@ -26,7 +26,7 @@
   "inputs": [
   	{
       "name": "keptnApiEndpoint",
-      "type": "connectedService:Keptn-Api-Endpoint",
+      "type": "connectedService:Keptn",
       "label": "Keptn API Endpoint",
       "defaultValue": "",
       "required": true,
